@@ -1,0 +1,33 @@
+{% extends "template.html" %}
+
+{% block titulo %} {{sigla}} {% endblock %}
+
+{% block conteudo %}
+<div class="container text-center">
+    <div class="jumbotron ">
+        <h1>{{nome}} - {{sigla}}</h1>
+
+        <h3>coordenador: {{coord}}</h3>
+
+        <p>{{descrição}}</p>
+
+        {% for disc in grade %}
+        <h2>{{disc.semestre}}</h2>
+        <ul class="d-flex flex-wrap" style="padding:0;">
+            {% for dis in disc.disciplinas %}
+            <li style="list-style:none;width:33%;margin:20px 0;" class="d-flex justify-content-center">
+                <div class="card" style="width: 18rem;">
+                    <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
+                    <div class="card-body">
+                        <h5 class="card-title">{{dis.nome}}</h5>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        <a href="{% url 'curriculo:disciplina' sigla dis.sigla_disc %}">ver</a>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

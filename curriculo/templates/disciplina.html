@@ -1,0 +1,16 @@
+{% extends "template.html" %}
+
+{% block titulo %} Disciplina {% endblock %}
+
+{% block conteudo %}
+<div class="container text-center">
+    <div class="jumbotron ">
+        <h1>{{nome}} - {{sigla_disc}}</h1>
+
+        <h3>Ementa:</h3>
+
+        <p>{{ementa}}</p>
+
+    </div>
+</div>
+{% endblock %}
