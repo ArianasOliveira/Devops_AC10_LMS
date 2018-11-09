@@ -1,0 +1,21 @@
+{% extends "template.html" %} 
+{% block titulo %} Area restrita{% endblock %}
+
+{% block conteudo %}
+    <ul class="d-flex flex-wrap text-center" style="padding:0;">
+        {% for  atividade in turma.atividades %}
+        <li style="list-style:none;width:33%;margin:20px 0;" class="d-flex justify-content-center">
+            <div class="card" style="width: 18rem;">
+                <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
+                <div class="card-body">
+                    <h5 class="card-title">AC - {{ atividade.id }} </h5>
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+
+                        <a href="{% url 'restrito:atividade' perfil turma.id atividade.id %}">ver</a>
+
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

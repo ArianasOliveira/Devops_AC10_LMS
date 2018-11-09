@@ -1,0 +1,19 @@
+{% extends "template.html" %} 
+{% block titulo %} Area restrita{% endblock %}
+
+{% block conteudo %}
+    <div class="card" style="width: 18rem;">
+        <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
+        <div class="card-header">
+            <h5 class="card-title">AC - {{ atividade.id }} </h5>
+        </div>
+        <div class="card-header">
+            <p>
+                {{atividade.descricao}}
+            </p>
+            <p>
+                {{atividade.comentario}}
+            </p>
+        </div>
+    </div>
+{% endblock %}
